@@ -1,0 +1,8 @@
+{
+  "name": "Roberto Portfolio",
+  "description": "Portfolio of Roberto Reyna Wijaya — Digital Business Student",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
