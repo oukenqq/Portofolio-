@@ -730,6 +730,36 @@ img { max-width: 100%; display: block; }
   }
 }
 
+/* ===================== STARFIELD BACKGROUND ===================== */
+.starfield {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: -10;
+  overflow: hidden;
+}
+
+.star {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.85);
+  border-radius: 50%;
+  opacity: 0;
+  animation: twinkle var(--duration, 4s) ease-in-out var(--delay, 0s) infinite alternate;
+  will-change: opacity;
+}
+
+@keyframes twinkle {
+  0% {
+    opacity: 0.15;
+  }
+  100% {
+    opacity: 0.85;
+  }
+}
+
 /* ===================== RESPONSIVE ===================== */
 @media (max-width: 1024px) {
   .about { grid-template-columns: 1fr; }

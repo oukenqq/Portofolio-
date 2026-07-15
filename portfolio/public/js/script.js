@@ -253,4 +253,38 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+
+  // ===================== STARFIELD BACKGROUND =====================
+  const starfield = document.getElementById('starfield');
+  if (starfield) {
+    const starCount = 80; // Optimal density between 60-100 particles
+    for (let i = 0; i < starCount; i++) {
+      const star = document.createElement('div');
+      star.className = 'star';
+      
+      // Random positions across the entire fixed viewport
+      const x = Math.random() * 100;
+      const y = Math.random() * 100;
+      
+      // Diverse particle sizing between 1px and 3px
+      const size = Math.random() * 2 + 1;
+      
+      // Gentle gray-to-white color values for an organic astronomical look
+      const grayValue = Math.floor(Math.random() * 56) + 200;
+      star.style.backgroundColor = `rgb(${grayValue}, ${grayValue}, ${grayValue})`;
+      
+      // Staggered, asynchronous twinkle durations and delays
+      const duration = Math.random() * 4 + 2.5; // 2.5s to 6.5s
+      const delay = Math.random() * 6;          // 0s to 6s
+      
+      star.style.left = `${x}%`;
+      star.style.top = `${y}%`;
+      star.style.width = `${size}px`;
+      star.style.height = `${size}px`;
+      star.style.setProperty('--duration', `${duration}s`);
+      star.style.setProperty('--delay', `${delay}s`);
+      
+      starfield.appendChild(star);
+    }
+  }
 });
